@@ -1,23 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>AI Resume Builder</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// Resume banane ka function
+function createResume() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const skills = document.getElementById('skills').value;
+    const experience = document.getElementById('experience').value;
 
-<h1>AI Resume Builder</h1>
+    if (!name || !email) {
+        alert("Bhai, kam se kam Naam aur Email toh bharo!");
+        return;
+    }
 
-<p>Enter Your Name:</p>
-<input type="text" id="name" placeholder="Your Name">
+    // Details ko preview me set karna
+    document.getElementById('res-name').innerText = name;
+    document.getElementById('res-contact').innerText = `📧 ${email} | 📞 ${phone}`;
+    
+    // Skills ko sunder tarike se dikhana
+    const skillsArray = skills.split(';').map(s => s.trim()).join(', ');
+    document.getElementById('res-skills').innerText = skillsArray || "No skills added";
+    
+    document.getElementById('res-exp').innerText = experience || "No experience/education added";
 
-<br><br>
+    // Preview box ko screen par dikhana
+    document.getElementById('resume-preview').style.display = 'block';
+}
 
-<button onclick="createResume()">Create Resume</button>
+// PDF Download karne ka function
+function downloadPDF() {
+    const element = document.getElementById('resume-content');
+    const name = document.getElementById('name').value || 'Resume';
+    
+    const options = {
+        margin:       10,
+        filename:     `${name}_Resume.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
 
-<h2 id="result"></h2>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+    // Library ko call karke PDF download karna
+    html2pdf().set(options).from(element).save();
+}
