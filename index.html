@@ -247,9 +247,26 @@ footer{
   <a href="#contact">
     <button style="padding:10px 20px; margin:5px; background:#22c55e; color:white; border:none; border-radius:8px; cursor:pointer;">
       Start
-    </button>
-  </a>
+      <h2>My Website</h2>
 
+<button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})"
+style="padding:10px 20px;margin:5px;background:#38bdf8;border:none;border-radius:8px;">
+View Demo
+</button>
+
+<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+style="padding:10px 20px;margin:5px;background:#22c55e;border:none;border-radius:8px;color:white;">
+Start
+</button>
+
+<hr>
+
+<div id="features" style="padding:50px;">
+  <h2>Features</h2>
+  <p>Modern UI, Fast Performance, Mobile Friendly</p>
 </div>
 
-<!-- ===== BUTTON FIX SECTION END ===== -->
+<div id="contact" style="padding:50px;">
+  <h2>Contact</h2>
+  <p>Email: test@gmail.com</p>
+</div>
