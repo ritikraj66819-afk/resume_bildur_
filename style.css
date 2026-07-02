@@ -1,43 +1,104 @@
-// Resume banane ka function
-function createResume() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const skills = document.getElementById('skills').value;
-    const experience = document.getElementById('experience').value;
+/* ========================= */
+/* PREMIUM UI UPDATE */
+/* ========================= */
 
-    if (!name || !email) {
-        alert("Bhai, kam se kam Naam aur Email toh bharo!");
-        return;
-    }
-
-    // Details ko preview me set karna
-    document.getElementById('res-name').innerText = name;
-    document.getElementById('res-contact').innerText = `📧 ${email} | 📞 ${phone}`;
-    
-    // Skills ko sunder tarike se dikhana
-    const skillsArray = skills.split(';').map(s => s.trim()).join(', ');
-    document.getElementById('res-skills').innerText = skillsArray || "No skills added";
-    
-    document.getElementById('res-exp').innerText = experience || "No experience/education added";
-
-    // Preview box ko screen par dikhana
-    document.getElementById('resume-preview').style.display = 'block';
+body{
+    background: linear-gradient(135deg,#0f172a,#1e3a8a,#7c3aed);
+    background-size:300% 300%;
+    animation:bgMove 10s ease infinite;
 }
 
-// PDF Download karne ka function
-function downloadPDF() {
-    const element = document.getElementById('resume-content');
-    const name = document.getElementById('name').value || 'Resume';
-    
-    const options = {
-        margin:       10,
-        filename:     `${name}_Resume.pdf`,
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
-    // Library ko call karke PDF download karna
-    html2pdf().set(options).from(element).save();
+.container{
+    max-width:850px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+h1{
+    font-size:40px;
+    color:#fff;
+    text-shadow:2px 2px 10px rgba(0,0,0,.4);
+}
+
+.subtitle{
+    color:#eee;
+    font-size:18px;
+}
+
+label{
+    color:#fff;
+    font-weight:600;
+}
+
+input,textarea{
+    background:rgba(255,255,255,.9);
+    border:none;
+    border-radius:15px;
+    padding:15px;
+    font-size:16px;
+    transition:.35s;
+}
+
+input:focus,
+textarea:focus{
+    transform:scale(1.02);
+    box-shadow:0 0 15px #60a5fa;
+}
+
+button{
+    background:linear-gradient(90deg,#06b6d4,#2563eb,#7c3aed);
+    color:#fff;
+    border:none;
+    border-radius:15px;
+    padding:16px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.35s;
+}
+
+button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(37,99,235,.45);
+}
+
+.resume-box{
+    margin-top:30px;
+    background:#fff;
+    border:none;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    overflow:hidden;
+}
+
+#resume-content{
+    padding:30px;
+}
+
+#resume-content h2{
+    color:#2563eb;
+    font-size:32px;
+}
+
+#resume-content h3{
+    color:#7c3aed;
+    border-bottom:2px solid #ddd;
+    padding-bottom:5px;
+}
+
+.download-btn{
+    background:linear-gradient(90deg,#22c55e,#16a34a);
+}
+
+.download-btn:hover{
+    background:linear-gradient(90deg,#16a34a,#15803d);
 }
