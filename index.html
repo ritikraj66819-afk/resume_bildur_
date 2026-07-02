@@ -3,58 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Resume Builder Pro</title>
+<title>Premium Business Website</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+body{
+  background:#0f172a;
+  color:white;
+}
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:#111827;
+  position:sticky;
+  top:0;
+}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+nav h1{
+  color:#38bdf8;
+}
+
+nav ul{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+nav ul li a:hover{
+  color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  padding:20px;
+}
+
+.hero h2{
+  font-size:50px;
+}
+
+.hero p{
+  margin:15px 0;
+  color:#cbd5e1;
+  max-width:600px;
+}
+
+.btn{
+  padding:12px 25px;
+  margin:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:#38bdf8;
+  color:black;
+}
+
+.btn-primary:hover{
+  background:#0ea5e9;
+}
+
+.btn-outline{
+  border:2px solid #38bdf8;
+  background:transparent;
+  color:white;
+}
+
+.btn-outline:hover{
+  background:#38bdf8;
+  color:black;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:50px;
+}
+
+.card{
+  background:#111827;
+  padding:20px;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  background:#1f2937;
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#38bdf8;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  padding:60px 20px;
+  background:#1e3a8a;
+}
+
+.cta h2{
+  margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#111827;
+  color:#94a3b8;
+}
+
+@media(max-width:768px){
+  .hero h2{
+    font-size:32px;
+  }
+  nav{
+    flex-direction:column;
+    gap:10px;
+  }
+}
+</style>
 
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
+<nav>
+  <h1>MyBrand</h1>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-<div class="left">
+<!-- HERO -->
+<section class="hero">
+  <h2>Build Your Dream Website 🚀</h2>
+  <p>Modern, fast and premium websites that help you grow your business and impress customers instantly.</p>
 
-<h1>🚀 AI Resume Builder</h1>
+  <div>
+    <button class="btn btn-primary">Get Started</button>
+    <button class="btn btn-outline">View Demo</button>
+  </div>
+</section>
 
-<p>Create a Professional Resume in Minutes</p>
+<!-- FEATURES -->
+<section class="features" id="features">
 
-<form>
+  <div class="card">
+    <h3>⚡ Fast Performance</h3>
+    <p>Optimized code for super fast loading speed and smooth experience.</p>
+  </div>
 
-<label>Profile Photo</label>
-<input type="file" id="photo" accept="image/*">
+  <div class="card">
+    <h3>📱 Mobile Friendly</h3>
+    <p>Fully responsive design works perfectly on phone, tablet and desktop.</p>
+  </div>
 
-<label>Full Name</label>
-<input type="text" id="name" placeholder="Enter Your Name">
+  <div class="card">
+    <h3>🎨 Modern UI</h3>
+    <p>Clean and premium design that attracts customers instantly.</p>
+  </div>
 
-<label>Email</label>
-<input type="email" id="email" placeholder="Enter Email">
+</section>
 
-<label>Phone</label>
-<input type="text" id="phone" placeholder="Enter Phone Number">
+<!-- CTA -->
+<section class="cta">
+  <h2>Start Your Business Online Today</h2>
+  <button class="btn btn-primary">Contact Now</button>
+</section>
 
-<label>Address</label>
-<textarea id="address" rows="3"></textarea>
+<!-- FOOTER -->
+<footer id="contact">
+  © 2026 MyBrand | All Rights Reserved
+</footer>
 
-<label>Career Objective</label>
-<textarea id="objective" rows="4"></textarea>
-
-<label>Education</label>
-<textarea id="education" rows="4"></textarea>
-
-<label>Experience</label>
-<textarea id="experience" rows="4"></textarea>
-
-<label>Skills</label>
-<input type="text" id="skills" placeholder="HTML, CSS, JavaScript">
-
-<label>Projects</label>
-<textarea id="projects" rows="4"></textarea>
-<button onclick="createResume()">Create Resume ✨</button>
+</body>
+</html>
