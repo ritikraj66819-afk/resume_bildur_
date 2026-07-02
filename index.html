@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Resume Builder</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
-<h1>AI Resume Builder</h1>
+    <div class="container">
+        <h1>🚀 AI Resume Builder</h1>
+        <p class="subtitle">Apni details bhariye aur sundar resume download kijiye</p>
+        
+        <div class="form-container">
+            <label>Poora Naam:</label>
+            <input type="text" id="name" placeholder="Your Name">
 
-<p>Enter Your Name:</p>
-<input type="text" id="name" placeholder="Your Name">
+            <label>Email ID:</label>
+            <input type="email" id="email" placeholder="alex@example.com">
 
-<br><br>
+            <label>Phone Number:</label>
+            <input type="text" id="phone" placeholder="+91 9876543210">
 
-<button onclick="createResume()">Create Resume</button>
+            <label>Skills (Semicolon ; se alag karein):</label>
+            <input type="text" id="skills" placeholder="HTML; CSS; JavaScript; Coding">
 
-<h2 id="result"></h2>
+            <label>Experience / Education:</label>
+            <textarea id="experience" rows="4" placeholder="Apni padhai ya kaam ke baare me likhein..."></textarea>
 
-<script src="script.js"></script>
+            <button onclick="createResume()">Create Resume ✨</button>
+        </div>
 
+        <div id="resume-preview" class="resume-box" style="display: none;">
+            <div id="resume-content">
+                <h2 id="res-name"></h2>
+                <p id="res-contact"></p>
+                <hr>
+                <h3>Skills</h3>
+                <p id="res-skills"></p>
+                <hr>
+                <h3>Experience & Education</h3>
+                <p id="res-exp" style="white-space: pre-line;"></p>
+            </div>
+            <button onclick="downloadPDF()" class="download-btn">Download PDF 📄</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
