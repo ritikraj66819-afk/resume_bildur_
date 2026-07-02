@@ -1,52 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Resume Builder</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
+<label>Career Objective:</label>
+<textarea id="objective" rows="3"></textarea>
 
-    <div class="container">
-        <h1>🚀 AI Resume Builder</h1>
-        <p class="subtitle">Apni details bhariye aur sundar resume download kijiye</p>
-        
-        <div class="form-container">
-            <label>Poora Naam:</label>
-            <input type="text" id="name" placeholder="Your Name">
+<label>Education:</label>
+<textarea id="education" rows="3"></textarea>
 
-            <label>Email ID:</label>
-            <input type="email" id="email" placeholder="alex@example.com">
+<label>Projects:</label>
+<textarea id="projects" rows="3"></textarea>
 
-            <label>Phone Number:</label>
-            <input type="text" id="phone" placeholder="+91 9876543210">
+<label>Languages:</label>
+<input type="text" id="languages" placeholder="Hindi, English">
 
-            <label>Skills (Semicolon ; se alag karein):</label>
-            <input type="text" id="skills" placeholder="HTML; CSS; JavaScript; Coding">
+<label>Hobbies:</label>
+<input type="text" id="hobbies" placeholder="Reading, Coding">
 
-            <label>Experience / Education:</label>
-            <textarea id="experience" rows="4" placeholder="Apni padhai ya kaam ke baare me likhein..."></textarea>
-
-            <button onclick="createResume()">Create Resume ✨</button>
-        </div>
-
-        <div id="resume-preview" class="resume-box" style="display: none;">
-            <div id="resume-content">
-                <h2 id="res-name"></h2>
-                <p id="res-contact"></p>
-                <hr>
-                <h3>Skills</h3>
-                <p id="res-skills"></p>
-                <hr>
-                <h3>Experience & Education</h3>
-                <p id="res-exp" style="white-space: pre-line;"></p>
-            </div>
-            <button onclick="downloadPDF()" class="download-btn">Download PDF 📄</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<label>Profile Photo:</label>
+<input type="file" id="photo" accept="image/*">
