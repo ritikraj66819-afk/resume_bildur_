@@ -1,17 +1,59 @@
-<label>Career Objective:</label>
-<textarea id="objective" rows="3"></textarea>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Builder Pro</title>
 
-<label>Education:</label>
-<textarea id="education" rows="3"></textarea>
+<link rel="stylesheet" href="style.css">
 
-<label>Projects:</label>
-<textarea id="projects" rows="3"></textarea>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<label>Languages:</label>
-<input type="text" id="languages" placeholder="Hindi, English">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<label>Hobbies:</label>
-<input type="text" id="hobbies" placeholder="Reading, Coding">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-<label>Profile Photo:</label>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<h1>🚀 AI Resume Builder</h1>
+
+<p>Create a Professional Resume in Minutes</p>
+
+<form>
+
+<label>Profile Photo</label>
 <input type="file" id="photo" accept="image/*">
+
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter Your Name">
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter Email">
+
+<label>Phone</label>
+<input type="text" id="phone" placeholder="Enter Phone Number">
+
+<label>Address</label>
+<textarea id="address" rows="3"></textarea>
+
+<label>Career Objective</label>
+<textarea id="objective" rows="4"></textarea>
+
+<label>Education</label>
+<textarea id="education" rows="4"></textarea>
+
+<label>Experience</label>
+<textarea id="experience" rows="4"></textarea>
+
+<label>Skills</label>
+<input type="text" id="skills" placeholder="HTML, CSS, JavaScript">
+
+<label>Projects</label>
+<textarea id="projects" rows="4"></textarea>
